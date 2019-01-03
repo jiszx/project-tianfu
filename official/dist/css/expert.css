@@ -1,0 +1,48 @@
+.bannerBox{background: url(../image/zjk-banner.png) no-repeat;background-size: 100% 100%;}
+.bannerBox img{margin: 156px 0 74px 0;}
+
+.expertContent>.boxContent{padding: 50px 0;}
+.expertContent .left-content{background:#34C975;border-radius:4px;color:#FFFFFF;float:left;width:222px;margin:0 60px 0 0;overflow:hidden;}
+.expertContent .left-content>h3{font-size:24px;margin: 32px 0 10px 35px;}
+.expertContent .left-content>h4{font-size: 16px;margin: 0 0 32px 36px;}
+.expertContent .left-content li{height:68px;padding: 27px 35px 0 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.expertContent .left-content li:hover{padding-top: 20px;}
+.expertContent .left-content li.options{background:#3CD67F;}
+.expertContent .left-content li.options:hover{padding-top: 27px;}
+.expertContent .left-content li+li{border-top: 1px solid #3CD67F;}
+.expertContent .expertModel{display: flex;flex-direction: column;}
+.expertContent .expertModel>.expertIntroduce>img{float: left;width:182px;height:182px;margin: 30px 52px 0 0;}
+.expertContent .expertModel>.expertIntroduce>.professorName{color:#34C975;font-size:18px;margin: 63px 0 27px 0;}
+.expertContent .expertModel>.expertIntroduce>.professorName+p{line-height: 24px;}
+.expertContent .expertModel>.expertIntroduce>.professorIntroduce {
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+.expertContent .expertModel>.expertIntroduce>.professorIntroduce:hover{
+  line-height: 24px;
+  white-space:normal;
+  -webkit-box-orient: unset;
+  height:auto;
+  overflow: visible;
+  transition-duration:0.2s;
+  transition-timing-function:linear;
+  cursor: pointer;
+  z-index: 999;
+}
+.expertContent .expertModel>.expertIntroduce>.professorIntroduce * {display: inline;}
+.expertContent .expertModel>.expertInterlocution>.not-message {
+  margin-top: 110px;
+  height: auto;
+  text-align: center;
+}
+.expertContent .expertModel>.expertInterlocution>.interlocution{display: table;margin-top: 110px;}
+.expertContent .expertModel>.expertInterlocution>.interlocution h4{margin: 5px 0 9px 0;}
+.expertContent .expertModel>.expertInterlocution>.interlocution p{color: #939393;line-height:22px;}
+.expertContent .expertModel>.expertInterlocution .questions{overflow: hidden;}
+.expertContent .expertModel>.expertInterlocution .questions>img{float: left;width: 76px;height: 76px;margin: 0 20px 0 0;}
+.expertContent .expertModel>.expertInterlocution .reply{background:#F8F8F8;float:right;width:843px;padding: 30px 15px;text-align: right;margin: 76px 0 0 0;}
+.expertContent .expertModel>.expertInterlocution .reply>img{float:right;width: 76px;height: 76px;margin: 0 0 0 20px;}

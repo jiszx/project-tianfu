@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>田夫网</title>
+		<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="layui/css/layui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/cultivate.css" />
+	</head>
+	<body>
+		<div class="box_head">
+			<div class="boxContent">
+				<img src="image/logo.png" class="logo"/>
+				<ul class="nav nav-tabs ">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="about.html">关于协农</a></li>
+					<li><a href="serve.html">服务</a></li>
+					<li class="options"><a href="cultivate.html">培训</a></li>
+					<li><a href="expert.html">专家库</a></li>
+					<li><a href="appDownload.html">APP下载</a></li>
+				</ul>
+				<div class="headTel">
+					<img src="image/icon-dianhua.png" />
+					<span class="tel">4001891288</span>
+					<span class="relation">联系我们</span>
+				</div>
+			</div>
+		</div>
+		<div class="bannerBox">
+			<div class="boxContent">
+				<img src="image/px-banner-wezi.png" />
+			</div>
+		</div>
+		<div class="cultivateBox_training indexBox_training">
+			<div class="boxContent">
+				<h2>课程培训</h2>
+				<p>Course training</p>
+				<div class="trainingBox clearfix">
+					
+				</div>
+			</div>
+		</div>
+		<div class="box_hotline">
+			<div class="boxContent">
+				<div class="telText">
+					<div>
+						<h4>服务热线：</h4>
+						<h3>400-189-1288</h3>
+					</div>
+					<div>
+						<h4>公司电话：</h4>
+						<h3>18084842632</h3>
+					</div>
+					<p>公司地址：中国（四川）自由贸易试验区成都高新区天府二街138号3栋41楼4106号</p>
+				</div>
+				<div class="QRCode">
+					<div>
+						<img src="image/db-wx1.png" alt="下载APP" class="downloadApp" />
+						<span>下载APP</span>
+					</div><div>
+						<img src="image/db-wx1.png" alt="关注协农" class="attention" />
+						<span>关注协农</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box_foot">
+			©Copyright All Rights Reserved.ICP  蜀ICP备18035598号   四川协农农业发展公司
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/clamp.min.js"></script>
+		<script src="js/plugIn.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			
+			cultivateList()
+			/* 
+			 * 课程列表
+			 * pageNum: 页码
+			 */
+			function cultivateList(pageNum){
+				pageNum = pageNum || 1;
+				JQrequest('/found/courses/list',{'data': {'page': pageNum,'size': 12}},function(data){
+					var expert_html = baidu.template('cultivateList',data);
+					$('.trainingBox').html(expert_html);
+					
+					var module = $(".indexBox_training .trainingModel>p").get();
+					for(var i=0; i<module.length; i++){
+						$clamp(module[i], {clamp: 2});
+					} // 内容做两行展示处理
+					//分页
+					paging('pageBox', data.total, function(obj, first){
+						// console.log(first,123,data.size,obj.curr,obj)
+						if(!first) cultivateList(obj.curr)
+					}, data.size);
+				});
+			}
+			
+		});
+		</script>
+		<script id='cultivateList' type="text/template">
+			<% for(var i=0; i<list.length; i++){ %>
+			<a class="<%=(i%3==0?'trainingModel':'trainingModel interval') %>" href="cultivateParticulars.html?courseId=<%=list[i].courseId %>">
+				<img src="<%=list[i].courseAttachPathUrl %>" class="pxkt"/>
+				<h4><%=list[i].courseTitle %></h4>
+				<p><%=list[i].courseIntro %></p>
+				<img src="image/moer-arrow-hover.png" class="arrow" />
+			</a>
+			<% } %>
+			<!-- <% if(pages>1){ %> -->
+				<div id="pageBox"></div>
+			<!-- <% } %> -->
+			
+		</script>
+	</body>
+</html>
+

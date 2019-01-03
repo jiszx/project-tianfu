@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>田夫网</title>
+		<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/about.css" />
+	</head>
+	<body>
+		<div class="box_head">
+			<div class="boxContent">
+				<img src="image/logo.png" class="logo"/>
+				<ul class="nav nav-tabs ">
+					<li><a href="index.html">首页</a></li>
+					<li class="options"><a href="about.html">关于协农</a></li>
+					<li><a href="serve.html">服务</a></li>
+					<li><a href="cultivate.html">培训</a></li>
+					<li><a href="expert.html">专家库</a></li>
+					<li><a href="appDownload.html">APP下载</a></li>
+				</ul>
+				<div class="headTel">
+					<img src="image/icon-dianhua.png" />
+					<span class="tel">4001891288</span>
+					<span class="relation">联系我们</span>
+				</div>
+			</div>
+		</div>
+		<div class="particularsBox">
+			<div class="boxContent">
+				<!-- <pre id="about-particulars-content"></pre> -->
+				<!-- <iframe src="aboutParticularsContent.htm" id="mainFrame"></iframe> -->
+				
+			</div>
+		</div>
+		<div class="box_hotline">
+			<div class="boxContent">
+				<div class="telText">
+					<div>
+						<h4>服务热线：</h4>
+						<h3>400-189-1288</h3>
+					</div>
+					<div>
+						<h4>公司电话：</h4>
+						<h3>18084842632</h3>
+					</div>
+					<p>公司地址：中国（四川）自由贸易试验区成都高新区天府二街138号3栋41楼4106号</p>
+				</div>
+				<div class="QRCode">
+					<div>
+						<img src="image/db-wx1.png" alt="下载APP" class="downloadApp" />
+						<span>下载APP</span>
+					</div><div>
+						<img src="image/db-wx1.png" alt="关注协农" class="attention" />
+						<span>关注协农</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box_foot">
+			©Copyright All Rights Reserved.ICP  蜀ICP备18035598号   四川协农农业发展公司
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/plugIn.js"></script>
+		<script src="js/aboutParticulars.js"></script>
+	</body>
+</html>
+<script id='newsInfo' type="text/template">
+	<h3><%=newsTitle %></h3>
+	<h5><%=timestampToTime(createdDate) %></h5>
+	<!-- <img src="<%=newsImagePathUrl %>" /> -->
+	<%=newsDetails %>
+	
+	<a href="javascript:void(0);" onclick="window.history.back()"><img src="image/xwxq-back.png" />返回上一级</a>
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>田夫网</title>
+		<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/cultivate.css" />
+	</head>
+	<body>
+		<div class="box_head">
+			<div class="boxContent">
+				<img src="image/logo.png" class="logo"/>
+				<ul class="nav nav-tabs ">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="about.html">关于协农</a></li>
+					<li><a href="serve.html">服务</a></li>
+					<li class="options"><a href="cultivate.html">培训</a></li>
+					<li><a href="expert.html">专家库</a></li>
+					<li><a href="appDownload.html">APP下载</a></li>
+				</ul>
+				<div class="headTel">
+					<img src="image/icon-dianhua.png" />
+					<span class="tel">4001891288</span>
+					<span class="relation">联系我们</span>
+				</div>
+			</div>
+		</div>
+		<div class="particularsBox">
+			<div class="boxContent">
+				<!-- <h2>关于枯叶病</h2>
+				<h4>简介：</h4>
+				<p>叶枯病多从叶缘、叶尖侵染发生，病斑由小到大不规则状，红褐色至灰褐色，病斑连片成大枯斑，
+				干枯面积达叶片的1/3-1/2，病斑边缘有一较病斑深的带；病健界限明显。常见于植物之中，该病在7-10月份均可发生。
+				植株下部叶片发病重。高温多湿、通风不良均有利于病害的发生。植株生长势弱的发病较严重。</p>
+				<h4>发病规律：</h4>
+				<p>叶枯病在病叶上越冬，翌年在温度适宜时，病菌的孢子借风、雨传播到寄主植物上发生侵染。
+				该病在7-10月份均可发生。植株下部叶片发病重。高温多湿、通风不良均有利于病害的发生。
+				植株生长势弱的发病较严重。</p>
+				<h4>防治方法：</h4>
+				<p>①秋季彻底清除病落叶，并集中烧毁，减少翌年的侵染来源。</p>
+				<p>②加强栽培管理，控制病害的发生。栽植地要排水良好，土壤肥沃，增施有机肥料 及磷、钾肥。控制栽植密度，
+				使其通风透光，降低叶面湿度，减少侵染机会。改喷浇为 滴灌或流水浇灌，减少病菌的传播。</p>
+				<p>③生长季节在发病严重的区域，从6月下旬发病初期到10月间，每隔10天左右喷1次药，连喷几次可有效的予以防治。
+				常用药剂有1：1：100倍的波尔多液、50%托布津500- 800倍液、50%多菌灵可湿性粉剂1000倍（或40%胶悬剂600-800倍）、
+				50%苯莱特1000-15 00倍、65%代森锌500倍液等，可供选用或交替使用。</p>
+				<img src="image/kcpxxqy-tu.png" />
+				<a href="javascript:void(0);" onclick="window.history.back()"><img src="image/xwxq-back.png" />返回上一级</a> -->
+			</div>
+		</div>
+		<div class="box_hotline">
+			<div class="boxContent">
+				<div class="telText">
+					<div>
+						<h4>服务热线：</h4>
+						<h3>400-189-1288</h3>
+					</div>
+					<div>
+						<h4>公司电话：</h4>
+						<h3>18084842632</h3>
+					</div>
+					<p>公司地址：中国（四川）自由贸易试验区成都高新区天府二街138号3栋41楼4106号</p>
+				</div>
+				<div class="QRCode">
+					<div>
+						<img src="image/db-wx1.png" alt="下载APP" class="downloadApp" />
+						<span>下载APP</span>
+					</div><div>
+						<img src="image/db-wx1.png" alt="关注协农" class="attention" />
+						<span>关注协农</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box_foot">
+			©Copyright All Rights Reserved.ICP  蜀ICP备18035598号   四川协农农业发展公司
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/plugIn.js"></script>
+	</body>
+</html>
+<script type="text/javascript">
+$(function(){
+	var bt = baidu.template;
+	bt.ESCAPE = false;//以html形式解析
+	JQrequest('/found/courses/info',{'data':{'courseId':getQueryString('courseId')}},function(data){
+		var cultivateInfo_html = bt('cultivateInfo',data);
+		$('.particularsBox .boxContent').html(cultivateInfo_html);
+	});
+});
+</script>
+<script id='cultivateInfo' type="text/template">
+	<h3><%=courseTitle %></h3>
+	
+	<p><%=courseDetails %></p>
+	
+	<a href="javascript:void(0);" onclick="window.history.back()"><img src="image/xwxq-back.png" />返回上一级</a>
+	
+</script>

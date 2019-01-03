@@ -1,0 +1,18 @@
+/* cultivate.html */
+.bannerBox{background: url(../image/px-banner.png) no-repeat;background-size: 100% 100%;height: 300px;}
+.bannerBox img{margin: 154px 0 0 0;}
+.cultivateBox_training{height: auto;}
+.cultivateBox_training h2{font-size: 24px;text-align: center;margin: 65px 0 7px 0;}
+.cultivateBox_training>div>p{color: #D8D8D8;font-size: 18px;text-align: center;}
+.cultivateBox_training .trainingBox{margin: 36px 0 0 0;}
+.cultivateBox_training .trainingBox>.trainingModel{display: block;}
+##pageBox{margin: 69px 0 79px 0;}
+
+/* cultivateParticulars.html */
+.particularsBox h3{text-align:center;margin:89px 0 91px 0;}
+.particularsBox h4{color:#34C975;}
+.particularsBox p{color:#939393;line-height:36px;}
+/* .particularsBox p *{line-height: inherit !important;font: inherit !important;color: #939393 !important;} */
+.particularsBox>div>img{margin:50px auto 0px auto;display:block;width: 993px;height: 553px;}
+.particularsBox a{background:#34C975;border:none;color:#FFFFFF;display:block;height:54px;line-height:54px;width:100%;margin:121px 0 126px 0;text-align:center;}
+.particularsBox a>img{margin:-3px 10px 0 0;}
