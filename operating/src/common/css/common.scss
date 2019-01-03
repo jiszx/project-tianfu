@@ -1,0 +1,287 @@
+/*css初始化*/
+@import '../iconFont/iconfont.css';
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB";
+    font-size: 14px;
+}
+
+
+/*=================================================================
+  图片
+  =================================================================*/
+
+img {
+    max-width: 100%;
+}
+
+
+/*=================================================================
+  文字相关
+  =================================================================*/
+
+.fontsize-sm {
+    font-size: 12px;
+}
+
+.fontsize-normal {
+    font-size: 14px;
+}
+
+.fontsize-lg {
+    font-size: 16px;
+}
+
+.fontsize-18 {
+    font-size: 18px;
+}
+
+.fontsize-20 {
+    font-size: 20px;
+}
+
+.fontsize-28 {
+    font-size: 28px;
+}
+
+.fontBold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+
+/*文字超出显示省略号*/
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*字体相关*/
+
+.lineheight-1 {
+    line-height: 1;
+}
+
+.lineheight-16 {
+    line-height: 16px;
+}
+
+.lineheight-18 {
+    line-height: 18px;
+}
+
+.lineheight-24 {
+    line-height: 24px;
+}
+
+.lineheight-28 {
+    line-height: 28px;
+}
+
+.lineheight-36 {
+    line-height: 36px;
+}
+
+.lineheight-normal {
+    line-height: 1.4;
+}
+
+.word-wrap {
+    word-wrap: break-word
+}
+
+.page-title {
+    padding: 10px 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/*=================================================================
+  color相关
+  =================================================================*/
+  .theme_color{
+      color:rgba(62, 62, 62, 1);
+  }
+  .button_color{
+      color:rgba(52, 201, 117, 1);
+  }
+  .danger_color{
+      color:rgba(255, 192, 70, 1);
+  }
+  .bg_color{
+     color:rgba(244, 244, 244, 1);
+  }
+  .el-button--primary{
+      background-color: #34C975 !important;
+      border-color: #34C975 !important; 
+  }
+  .el-button--primary:active{
+      background-color: rgba(52, 201, 117, .9) !important;
+      border-color: rgba(52, 201, 117, .9) !important;
+  }
+  .el-button--primary:hover{
+    background-color: rgba(52, 201, 117, .9) !important;
+    border-color: rgba(52, 201, 117, .9) !important;
+}
+.page_wrapper{
+    overflow: hidden;
+    margin-top:20px;
+}
+.page_wrapper .el-pagination{
+    float:right;
+}
+
+   .input_width{
+      width: 220px;
+   }
+  .iconfont{
+    /* vertical-align: middle; */
+    margin-right: 5px;
+    width: 24px;
+    text-align: center;
+    font-size: 18px;      
+    display: inline-block;
+  }
+  .pull_right{
+      float:right;
+  }
+  //列表页搜索区域-Ernest
+  .table-wrapper {
+    margin-top: 20px;
+  }
+  .search-wrapper {
+    margin-top: 10px;
+  }
+  .search-item {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  .search-wrapper .el-form-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 33.3%;
+    float: left;
+  }
+  .search-wrapper .el-form-item.large {
+    width: 50%;
+  }
+  .search-wrapper .el-select,
+  .page-form-wrapper .el-select,
+  .page-form-wrapper .el-date-editor.el-input,
+  .page-form-wrapper .el-date-editor--daterange.el-input__inner,
+  .search-input-wrapper .el-date-editor.el-input,
+  .search-input-wrapper .el-date-editor.el-input__inner,
+  .search-input-wrapper .el-date-editor--daterange.el-input__inner {
+    width: 100%;
+  }
+  .pagination-wrapper {
+    padding-top: 20px;
+    text-align: right;
+  }
+  .operation-btn-wrapper {
+    float: right;
+  }
+  // 列表页面搜索按钮区设置伪类消除浮动带来的元素塌陷-Ernest
+  .list-operation-btn-wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  // 列表搜索框-Ernest
+  .list-operation-btn-wrapper {
+    padding-top: 15px;
+  }
+  // 表格-Ernest
+  .table-header-row,
+  .table-header-row>th {
+    background-color: rgba(42, 63, 84, 0.5) !important;
+    color: #fff !important;
+  }
+  .table-wrapper .el-table__row a {
+    color: #409EFF;
+  }
+  .table-wrapper .el-table__row .link {
+    color: #409EFF;
+  }
+  .table-operation-btn-wrapper {
+    padding-bottom: 20px;
+  }
+  // 表格单元格数据居中-Ernest
+  .el-table td,.el-table th {
+    text-align: center;
+  }
+  //富文本层级显示
+  .el-form-item__content {
+    z-index: 1;
+  }
