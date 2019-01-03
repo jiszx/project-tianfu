@@ -1,0 +1,647 @@
+//公共样式文件
+@import "./vars.scss";
+/*css初始化*/
+
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/** { touch-action: none; }*/
+html {
+  font-size: 50px;
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+/*媒体查询 自适应屏幕*/
+@media only screen and (min-width:320px ) {
+  html{font-size: 42.7px !important;}
+}
+@media only screen and (min-width:360px ) {
+  html{font-size: 48px !important;}
+}
+@media only screen and (min-width:375px ) {
+  html{font-size: 50px !important;}
+}
+@media only screen and (min-width:412px ) {
+  html{font-size: 55px !important;}
+}
+@media only screen and (min-width:414px ) {
+  html{font-size: 55.2px !important;}
+}
+@media only screen and (min-width:640px ) {
+  html{font-size: 85.34px !important;}
+}
+@media only screen and (min-width:750px ) {
+  html{font-size: 100px !important;}
+}
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB";
+  color: $black;
+  font-size: 0.28rem;
+  max-width: 750px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.page-content {
+  padding-right: $page-side-padding;
+  padding-left: $page-side-padding;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+.oms-btn-primary {
+  height: 0.88rem;
+  line-height: 0.88rem;
+  background: $red;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.oms-btn-default {
+  height: 0.88rem;
+  line-height: 0.88rem;
+  border: 1px solid $red;
+  color: $red;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/*必填项 * 图标*/
+.required-fields:before {
+  content: ' *';
+  color: red;
+  font-size: 120%;
+}
+
+.border-radius-4 {
+  border-radius: 4px;
+}
+
+/*=================================================================
+  color相关
+  =================================================================*/
+.color-error {
+  color: $red;
+}
+
+.red {
+  color: $red;
+}
+
+.gray {
+  color: $gray;
+}
+
+.blue {
+  color: #337ab7;
+}
+
+.orange {
+  color: #fe955e;
+}
+
+.green {
+  color: #0eb393;
+}
+
+.error {
+  color: $red;
+}
+
+.black {
+  color: $black;
+}
+
+.light-black {
+  color: $light-black;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.color666 {
+  color: #666;
+}
+
+.border-red {
+  border-color: $red;
+}
+
+.bg-primary {
+  background-color: #34C975;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-none {
+  background: none !important;
+}
+
+.bg-none * {
+  background: none !important;
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
+.bg-gray {
+  background: #f7f7f7;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.link {
+  color: #337ab7;
+  cursor: pointer;
+}
+
+/*=================================================================
+  padding margin
+  =================================================================*/
+.paddingT0 {
+  padding-top: 0 !important;
+}
+
+.paddingB0 {
+  padding-bottom: 0 !important;
+}
+
+.paddingL0 {
+  padding-left: 0 !important;
+}
+
+.paddingR0 {
+  padding-right: 0 !important;
+}
+
+@for $i from 10 through 90 {
+  @if $i % 10==0 {
+    .paddingT#{$i} {
+      padding-top: #{$i/100}rem
+    }
+
+    .paddingL#{$i} {
+      padding-left: #{$i/100}rem
+    }
+
+    .paddingR#{$i} {
+      padding-right: #{$i/100}rem
+    }
+
+    .paddingB#{$i} {
+      padding-bottom: #{$i/100}rem
+    }
+
+    .marginT#{$i} {
+      margin-top: #{$i/100}rem
+    }
+
+    .marginL#{$i} {
+      margin-left: #{$i/100}rem
+    }
+
+    .marginR#{$i} {
+      margin-right: #{$i/100}rem
+    }
+
+    .marginB#{$i} {
+      margin-bottom: #{$i/100}rem
+    }
+
+    .padding#{$i} {
+      padding: #{$i/100}rem
+    }
+
+    .margin#{$i} {
+      margin: #{$i/100}rem
+    }
+  }
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*=================================================================
+  文字相关
+  =================================================================*/
+@for $i from 18 through 38 {
+  @if $i % 2==0 {
+    .fontsize-#{$i} {
+      font-size: #{$i/100}rem
+    }
+
+    .lineheight-#{$i} {
+      line-height: #{$i/100}rem
+    }
+  }
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left
+}
+
+.text-right {
+  text-align: right
+}
+
+/*文字超出显示省略号*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lineheight-normal {
+  line-height: 1.4;
+}
+
+.word-wrap {
+  word-wrap: break-word
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.lineheight-1 {
+  line-height: 1;
+}
+
+.text-indent {
+  text-indent: 1em;
+}
+
+/*=================================================================
+  布局相关
+  =================================================================*/
+.none {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.table {
+  display: table
+}
+
+.table-cell {
+  display: table-cell
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+/*=================================================================
+  float等宽列表
+  使用示例：
+    <div class="inline_box">
+      <div class="inline_2"></div>
+      <div class="inline_2"></div>
+    </div>
+  =================================================================*/
+.inline_box {}
+
+.inline_box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+.inline_2,
+.inline_3,
+.inline_4,
+.inline_5,
+.inline_6 {
+  float: left;
+}
+
+.inline_2 {
+  width: 50%;
+  *width: 49.9%;
+}
+
+.inline_3 {
+  width: 33.33333%;
+  *width: 33.3%;
+}
+
+.inline_4 {
+  width: 25%;
+  *width: 24.9%;
+}
+
+.inline_5 {
+  width: 20%;
+  *width: 19.9%;
+}
+
+.inline_6 {
+  width: 16.66666%;
+  *width: 16.6%;
+}
+
+/*清除浮动*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*左浮动，右浮动*/
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/*分割线-虚线*/
+.cutLine-dashed {
+  display: block;
+  height: 0;
+  margin: 5px 0;
+  border-bottom: 1px dashed #c8c8c8;
+}
+
+.vertical-line {
+  display: inline-block;
+  width: 2px;
+  height: 16px;
+  border-left: 2px;
+  background: #ccc;
+  vertical-align: middle;
+}
+
+/**
+动画
+ */
+/* 无限旋转 */
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/** 先scale变大再变为原本尺寸，试用按钮点击 */
+
+@keyframes scale-spring {
+  0% {
+    opacity: .5;
+    transform: scale(.5);
+  }
+
+  80% {
+    opacity: .8;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/**
+加载更多公共样式
+ */
+.loading-more-box {}
+
+.loading-more-box .loading-more {
+  padding: 10px 0;
+  color: #999999;
+  text-align: center;
+}
+
+@import "./reset-vant-style.scss";
+/**
+发现列表板块icon自定义样式设置
+ */
+.page-find .van-cell__right-icon {
+  line-height: 0.98rem;
+}
+.van-cell__value{
+  span{
+    color:RGBA(147, 147, 147, 1);
+  }
+}
+.van-dialog__confirm span{
+  color:RGBA(52, 201, 117, 1);
+}
+/* 采购大厅-区域列表弹层背景色控制 */
+.page-purchase-list .van-modal {
+  background-color: rgba(0, 0, 0, 0);
+}
+/* 采购大厅-区域列表弹层运动方向控制 */
+.page-purchase-list .popup-slide-bottom-leave-active,
+.page-purchase-list .popup-slide-bottom-leave-to {
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+}
+.page-purchase-list .popup-slide-bottom-enter-active,
+.page-purchase-list .popup-slide-bottom-enter-to {
+  transform: translate3d(-50%, -100%, 0);
+  opacity: 0.5;
+}
+
+/* 供应-区域列表弹层背景色控制 */
+.page-supply-list .van-modal {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* 供应-区域列表弹层运动方向控制 */
+.page-supply-list .popup-slide-bottom-leave-active,
+.page-supply-list .popup-slide-bottom-leave-to {
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+}
+
+.page-supply-list .popup-slide-bottom-enter-active,
+.page-supply-list .popup-slide-bottom-enter-to {
+  transform: translate3d(-50%, -100%, 0);
+  opacity: 0.5;
+}
+/* 用户信息头像板块样式 */
+.page-user-info {
+  .page-content {
+    .van-header {
+      line-height: 40px;
+      .user-header {
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+        }
+      }
+      .van-cell__right-icon {
+        line-height: 40px;
+      }
+    }
+    /* 所在地省市区显示样式控制 */
+    .van-area {
+      .van-cell__title {
+        flex: 0.3;
+      }
+    }
+  }
+}
+/* 新增编辑收货地址样式 */
+.page-address-edit {
+  .cell-address{
+    .van-cell__title{
+      max-width: 90px;
+    }
+    .van-cell__value{
+      /* color: #D8D8D8; */
+      color: #313131;
+      text-align:left;
+    }
+  }
+  .van-cell{
+    color: #313131;
+    font-size: 0.3rem;
+    .van-cell__title {
+      .van-cell__label {
+        color: #D8D8D8;
+      }
+    }
+    .van-cell__value{
+      .van-field__body{
+        input{
+          color: #313131;
+        }
+        input::-webkit-input-placeholder{
+          color: #D8D8D8; //input设置输入框默认文字颜色
+        }
+      }
+    }
+  }
+}
+
+/* 当列表没有信息时 */
+.no_order{
+  text-align: center;
+  margin-top:36%;
+  img{
+    width:2.74rem;
+    height:2.64rem;
+    transform: translateX(.3rem)
+  }
+}

@@ -1,0 +1,63 @@
+@import "./vars.scss";
+#app{
+  .van-checkbox__icon--checked .van-icon{
+    color: #fff;
+    border-color: #FFC046;
+    background-color: #FFC046;
+  }
+  .van-radio__input {
+    height: 1.1em;
+  }
+  .van-radio .van-icon-checked{
+    color: #FFC046;
+    border-color: #FFC046;
+    background-color: #fff;
+  }
+  .van-tabs__line {
+    background-color: #34C975;
+  }
+  .van-tab--active {
+    color: #34C975;
+  }
+  .news-page {
+    .van-tabs__nav, .van-tab {
+      background-color: #F2F6F9;
+    }
+    .van-hairline--top-bottom::after {
+      border-width: 0px 0;
+    }
+    input::-webkit-input-placeholder{
+      color:#d8d8d8;
+    }
+    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color:#d8d8d8;
+    }
+    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color:#d8d8d8;
+    }
+    input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+        color:#d8d8d8;
+    }
+  }
+  .shop-list-page {
+    .van-swipe-cell__left, .van-swipe-cell__right {
+      color: #fff;
+      font-size: 15px;
+      width: 105px;
+      // height: 44px;
+      // display: inline-block;
+      // text-align: center;
+      // line-height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FF0000;
+    }
+    .van-swipe-cell .van-cell {
+      padding: 0;
+    }
+    .van-swipe-cell .van-hairline--top-bottom::after {
+      border-width: 0px 0;
+    }
+  }
+}
