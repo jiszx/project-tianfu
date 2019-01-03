@@ -1,0 +1,27 @@
+<!--pages/comments/comments.wxml-->
+<view class="goods-comment">
+  <view class="goods-comment-type comments-dec">
+    <span class="{{ searchParams.commentType===''&&searchParams.hasPic!=1?'active':'' }}" data-id="all" bindtap="chooseComments">全部({{commentCount.commentTotal}})</span>
+    <span class="{{ searchParams.commentType==0 && searchParams.commentType!==''?'active':'' }}" data-id="0" bindtap="chooseComments">好评({{commentCount.goodCommentNum}})</span>
+    <span class="{{ searchParams.commentType==1?'active':'' }}" data-id="1" bindtap="chooseComments">中评({{commentCount.mediumCommentNum}})</span>
+    <span class="{{ searchParams.commentType==2?'active':'' }}" data-id="2" bindtap="chooseComments">差评({{commentCount.badCommentNum}})</span>
+    <span class="{{ searchParams.hasPic==1?'active':'' }}" data-id="hasPic" bindtap="chooseComments">带图({{commentCount.hasPicCommentNum}})</span>
+  </view>
+  <view>
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">  
+      <view class="comments-dec" wx:for="{{ list }}" wx:key="{{ index }}">
+        <comments-row 
+          customer="{{ item.customer }}"
+          commentType="{{ item.commentType }}"
+          commentDetails="{{ item.commentDetails }}"
+          attachPath1Url="{{ item.attachPath1Url||'' }}"
+          attachPath2Url="{{ item.attachPath2Url||'' }}"
+          attachPath3Url="{{ item.attachPath3Url||'' }}"
+          commoNum="{{ item.commoNum }}" />
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">努力加载中...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已无更多数据</view>  
+    </scroll-view>
+  </view>
+  <van-toast id="van-toast" />
+</view>

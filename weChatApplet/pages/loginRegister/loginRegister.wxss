@@ -1,0 +1,72 @@
+.login-page {
+  width: 100%;
+  height:100%;
+  background: linear-gradient(to bottom,#61e395,#39c46e);
+  position: relative;
+}
+.login-header {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  padding-top: 34rpx;
+}
+.login_box{
+  /* width:100%; */
+  position: absolute;
+  left:30rpx;
+  right:30rpx;
+  top: 40%;
+  transform: translateY(-50%);
+  /* padding:0 30rpx; */
+}
+.slide_p{
+  font-size: 36rpx;
+  padding-left: 40rpx;
+  color: RGBA(193, 255, 220, 1);
+  margin-bottom: 30rpx;
+}
+.active{
+  margin-right: 28rpx;
+  /* color: #C1FFDC; */
+  color: #fff;
+}
+.login_tab{
+  background-color: #fff;
+  border-radius: 5px;
+  /* width: 100%; */
+  padding: 60rpx 40rpx;
+}
+.login_tab:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent; /*调整小三角形的大小*/
+  border-bottom-color: #fff;/*改变小三角的颜色（最好就是和父级div的背景颜色相同）;bottom是用于调整小三角的方向*/
+  position: absolute;
+  left: 54rpx;/*调整小三角形的位置*/
+  bottom: 100%;/*调整小三角形的位置*/
+  top: 40rpx;/*调整小三角形的位置 */
+}
+.login-input {
+  width: 100%;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.forget-psd{
+  color: #34C975;
+  height: 30rpx;
+  margin-bottom: 50rpx;
+}
+.is-read{
+  color:#939393;
+}
+.login-btn {
+  background: #FFDB96;
+  color: #fff;
+  border: none;
+}
+.login-btn-prim {
+  background: #FFC046;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "/common/vant-weapp/cell/index",
+    "van-datetime-picker": "/common/vant-weapp/datetime-picker/index",
+    "van-popup": "/common/vant-weapp/popup/index"
+  }
+}

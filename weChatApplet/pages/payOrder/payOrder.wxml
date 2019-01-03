@@ -1,0 +1,31 @@
+<!--pages/payOrder/payOrder.wxml-->
+<view class="page-choose-pay">
+  <view class="page-content">
+    <span class="gray">支付金额：</span>
+    <span class="warning pull-right"><span class="price-icon">￥</span>{{currentOrderData.orderAmount}}</span>
+  </view>
+  <view class="choose-payType">
+    <view class="payType-item">
+      <van-radio-group value="{{orderPayMode}}" bind:change="changePayType">
+        <van-cell clickable class="pay-cell">
+          <view slot="title" class="">
+            <image src="/common/images/order/zxzf-weixin.png" alt="" class="wechat-img" />
+            微信支付
+          </view>
+          <view>
+            <van-radio class="inline-block" name="0" />
+          </view>
+        </van-cell>
+      </van-radio-group>
+    </view>
+  </view>
+
+  <view class="bottom_box">
+    <view class="left_box">
+      <p>实付款
+      <span class="price-icon">￥</span><span>{{currentOrderData.orderAmount}}</span></p>
+    </view>
+    <view class="right_box" bindtap="submitOrder">确认支付</view>
+  </view>
+  <van-toast id="van-toast" />
+</view>

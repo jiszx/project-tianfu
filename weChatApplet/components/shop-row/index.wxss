@@ -1,0 +1,72 @@
+/* components/shop-row/index.wxss */
+@import '../../common/common.wxss';
+.goods-shop {
+  padding: 30rpx;
+  position: relative;
+  background: #fff;
+}
+.info_box{
+  width:100%;
+  height:100%;
+  display: flex;
+}
+.left_img{
+  flex:0 0 128rpx;
+  height: 128rpx;
+  border-radius: 64rpx;
+  overflow: hidden;
+}
+.left_img image {
+  height:100%;
+  width:100%;
+}
+.right_box{
+  flex:1;
+  position: relative;
+  padding-left:24rpx;
+  width: 0;
+}
+h5{
+  margin-bottom: 4rpx;
+  font-size: 32rpx;
+  font-weight: normal;
+}
+p{
+  width:100%;
+  font-size: 13px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-height: 17px;
+}
+.bottom_p{
+  font-size: 12px;
+  color:RGBA(147, 147, 147, 1);
+  margin-top:5px;
+}
+.bottom_p span{
+  color:#fff;
+  background-color: RGBA(255, 192, 70, 1);
+  padding:0 4px 1px;
+  border-radius: 3px;
+  margin-left: 30rpx;
+}
+.icon_box{
+  display: inline-block;
+  margin-left: 10px;
+}
+.icon_box image{
+  width:16px;
+  height:22px;
+  vertical-align: middle;
+}
+.goods-shop-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30rpx;
+  height: 23px;
+  margin: auto;
+  overflow: hidden;
+}

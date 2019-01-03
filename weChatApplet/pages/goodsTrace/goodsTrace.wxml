@@ -1,0 +1,105 @@
+<!--pages/goodsTrace/goodsTrace.wxml-->
+<view class="goods-trace">
+    <view class="goods">
+      <image src="{{ goodsData.commoAttachPathUrl }}" alt=""/>
+      <text>{{goodsData.commoName}}</text>
+    </view>
+    <view class="my-step-line" wx:if="{{ stepData.length }}">
+      <view class="my-step-info">
+        <view wx:for="{{ stepData }}" wx:key="{{index}}">
+          <view>
+            <view class="my-step-title">
+              <view class="step-title-item my-step-circle">
+                <image src="/common/images/index/spzz-yuan.png" alt=""/>
+              </view>
+              <span class="step-title-item">
+                {{ item.date }}
+              </span>
+            </view>
+            <view class="my-step-item">
+              <view class="item-info">
+                <!-- 生产计划 -->
+                <view wx:if="{{ item.tracePlanId }}">
+                  <view class='item-title'>生产计划</view>
+                  <p>种植面积：{{item.plantingArea}}</p>
+                  <p>预估产量：{{item.forecastProduction}}</p>
+                  <p>品质要求：{{item.typeName}}</p>
+                  <p>种植时间：{{item.date}}</p> 
+                  <!-- plantDate -->
+                  <p>采收时间：{{item.harvestDate}}</p>
+                </view>
+                <!-- 土壤检测 -->
+                <view wx:if="{{ item.traceSoilId }}">
+                  <view class='item-title'>土壤检测</view>
+                  <p>土壤类型：{{item.typeName}}</p>
+                  <p class="soilsImage">土壤检测：<image wx:if="{{ item.soilTestUrl }}" src="{{ item.soilTestUrl }}" alt=""/></p>
+                  <p>检测时间：{{item.date}}</p> 
+                  <!-- testDate -->
+                </view>
+                <!-- 种子、种苗 -->
+                <view wx:if="{{ item.traceSeedId }}">
+                  <view class='item-title'>种子、种苗</view>
+                  <p>品种：{{item.commoTyName}}</p>
+                  <p>数量：{{item.seedAmount}}</p>
+                  <p>来源：{{item.seedSource}}</p>
+                  <p>育苗方式：{{item.typeName}}</p>
+                  <p>种苗时间：{{item.date}}</p>
+                  <!-- seedDate -->
+                </view>
+                <!-- 播种-->
+                <view wx:if="{{ item.traceSowId }}">
+                  <view class='item-title'>播种</view>
+                  <p>面积：{{item.sowArea}}</p>
+                  <p>土壤处理：{{item.soilTreatment}}</p>
+                  <p>种子种苗处理方式：{{item.seedTreatment}}</p>
+                  <p>播种方式：{{item.sowMethod}}</p>
+                  <p>种植时间：{{item.date}}</p>
+                  <!-- sowDate -->
+                </view>
+                <!-- 施肥 -->
+                <view wx:if="{{ item.traceFertilizeId }}">
+                  <view class='item-title'>施肥</view>
+                  <p>肥料类型：{{item.typeName}}</p>
+                  <p>类型配比：{{item.fertilizeCategory}}</p>
+                  <p>用量：{{item.fertilizeDosage}}</p>
+                  <p>施肥时间：{{item.date}}</p>
+                  <!-- fertilizeDate -->
+                </view>
+                <!-- 病虫害防治 -->
+                <view wx:if="{{ item.tracePestId }}">
+                  <view class='item-title'>病虫害防治</view>
+                  <p>类型：{{item.typeName}}</p>
+                  <p>成分含量：{{item.pestContent}}</p>
+                  <p>打药时间：{{item.date}}</p>
+                  <!-- pestDate -->
+                  <p>安全期：{{item.safeDate}}</p>
+                </view>
+                <!-- 中耕除草 -->
+                <view wx:if="{{ item.traceHoeId }}">
+                  <view class='item-title'>中耕除草</view>
+                  <p>工作类别：{{item.workType}}</p>
+                  <p>工作方式：{{item.workWay}}</p>
+                  <p>其它：{{item.hoeOther}}</p>
+                  <p>农耕除草时间：{{item.date}}</p>
+                  <!-- hoeDate -->
+                </view>
+                <!-- 采收 -->
+                <view wx:if="{{ item.traceHarvestId }}">
+                  <view class='item-title'>采收</view>
+                  <p>采收方式：{{item.harvestWay}}</p>
+                  <p>产量：{{item.production}}</p>
+                  <p>包装方式：{{item.packingWay}}</p>
+                  <p>储藏方式：{{item.storageWay}}</p>
+                  <p>采收时间：{{item.date}}</p>
+                  <!-- harvestDate -->
+                </view>
+                <p>关联订单：<span class="marginR20" wx:for="{{ item.orders }}" wx:key="{{ index }}">{{item.orderNumber+ ' ' +item.orderItemName}}</span></p>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="no-trace-info">该商品暂无追溯信息</view>
+    <van-toast id="van-toast" />
+  </view>

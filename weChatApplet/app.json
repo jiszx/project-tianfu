@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/submitOrder/submitOrder",
+    "pages/payOrder/payOrder",
+    "pages/payType/payType",
+    "pages/paySuccess/paySuccess",
+    "pages/addres/address",
+    "pages/addAddress/addAddress",
+    "pages/comments/comments",
+    "pages/loginRegister/loginRegister",
+    "pages/goodsTrace/goodsTrace"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "田夫网",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-toast": "/common/vant-weapp/toast/index"
+  }
+}

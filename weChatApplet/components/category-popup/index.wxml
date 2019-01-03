@@ -1,0 +1,56 @@
+<!--category-popup.wxml-->
+<view>
+  <div class="{{isFirstOpen?'componnet-filtrate-popup filtrate-show':'componnet-filtrate-popup filtrate-hide'}}">
+    <div class="filtrate-popup-inner">
+      <div class="filtrate-min">
+        <div class="filtrate-min-inner" ref="filtrateMinInner">
+          <!--类型筛选-->
+          <div class="category-wrapper light-black">
+            <!--一级-->
+            <div class="category-name text-center">
+              <ul>
+                <view 
+                  class="{{currentCategory == item.commoTyId ? 'active' : ''}}"
+                  wx:for="{{categoryList}}"
+                  wx:key="{{index}}">
+                  <li bindtap="change" data-item="{{item}}">
+                    <p>{{item.commoTyName}}</p>
+                  </li>
+                </view>
+              </ul>
+            </div>
+            <!--二级-->
+            <div class="category-main">
+              <div class="category-item-wrapper">
+                <view
+                  class="{{currentDetailCategory == item.commoTyId ? 'active category-item text-center' : 'category-item text-center'}}"
+                  wx:for="{{categoryDetailData}}"
+                  wx:key="{{index}}"
+                  data-item="{{item}}"
+                  bindtap="categorySecondClick"
+                >
+                  <p class="ellipsis paddingT20">{{item.commoTyName}}</p>
+                </view>              
+              </div>
+            </div>
+            <!--三级-->
+            <div class="category-main">
+              <div class="category-item-wrapper">
+                <view
+                  class="category-item text-center"
+                  wx:for="{{categoryThirdData}}"
+                  wx:key="{{index}}"
+                  data-item="{{item}}"
+                  bindtap="categoryThirdClick"
+                >
+                  <p class="ellipsis paddingT20">{{item.commoTyName}}</p>
+                </view>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mask-wrapper" bindtap="closeCategory"></div>
+    </div>
+  </div>
+</view>

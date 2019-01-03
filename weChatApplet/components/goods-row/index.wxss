@@ -1,0 +1,87 @@
+.page-components{
+  width: 100%;
+  background: #fff;
+}
+.components-goodlist-row {
+  display: flex;
+  /* width: 100%; */
+  /* height: 264rpx; */
+  padding: 30rpx 30rpx 20rpx 30rpx;
+}
+.goodlist-left{
+  width: 204rpx;
+}
+.goodlist-left image{
+  width: 204rpx;
+  height: 204rpx;
+}
+.goodlist-right{
+  padding-left: 36rpx;
+  padding-top: 5rpx;
+  width: 70%;
+}
+.goodlist-title{
+  width: 90%;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  font-size: 15px;
+  color: #313131;
+  line-height: 20px;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goodlist-des .des-common{
+  text-overflow: ellipsis;
+  color: #C9C9C9;
+}
+.commoPrice{
+  color: #FBB42A;
+  font-size: 14px;
+  padding-right: 16rpx;
+}
+.commoPrice .price {
+  font-size: 16px;
+  font-weight: bold;
+}
+.commoSales{
+  color: #C9C9C9;
+  font-size: 12px;
+}
+.cart-img{
+  width: 0.5rem;
+  height: 0.44rem;
+  background: url(../assets/images/goods/icon-gwc@2x.png) no-repeat center center;
+  background-size: cover;
+  float: right;
+}
+.active{
+  background: url(../assets/images/goods/gydt-icon-gwc@2x.png) no-repeat center center;
+  background-size: cover;
+  float: right;
+} 
+.des-unit{
+  padding-bottom: 20rpx;
+  color: #C9C9C9;
+  /* height: 40rpx; */
+}
+.shop-custName {
+  display: inline-block;
+  padding-top: 10rpx;
+  font-size: 12px;
+  max-width:330rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.authentication-img{
+  padding-left: 16rpx;
+  display: inline-block;
+}
+.authentication-img image{
+  width: 26rpx;
+  height: 35rpx;
+  margin-left: 2px;
+  vertical-align: middle;
+}

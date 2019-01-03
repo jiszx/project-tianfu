@@ -1,0 +1,67 @@
+/* pages/paySuccess/paySuccess.wxss */
+.success_pay{
+  position: relative;
+  background: #fff;
+  padding: 50rpx 20rpx;
+  height: 100%;
+  border-top: 1px solid #efefef;
+}
+.public-bj{
+  position: absolute;
+  z-index: 1;
+  top: 50rpx;
+  left: 20rpx;
+  right: 20rpx;
+  width: auto;
+}
+.public-bj image{
+  width: 100%;
+  height: 386rpx;
+}
+.public-row{
+  position: relative;
+  z-index: 2;
+  margin: 100rpx 0 200rpx;
+}
+.public-row p{
+  font-size: 30rpx;
+}
+.pulic-status {
+  display: flex;
+  color: #34C975;
+  justify-content: center;
+  align-items: center;
+}
+.protect {
+  margin: 80rpx 0 200rpx;
+}
+.protect .pulic-status{
+  margin-bottom: 30rpx;
+}
+.protect .pulic-status p{
+  font-size: 38rpx;
+}
+.protect .pulic-status image{
+  width: 140rpx;
+  height: 114rpx;
+  flex: 0 0 140rpx;
+  margin-right: 30rpx;
+}
+.success-btn {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+.checkDetail {
+  color: #fff;
+  background: #34C975;
+  border-radius: 6px;
+  margin: 0 10rpx 30rpx;
+}
+.returnHome {
+  color: #34C975;
+  background: #fff;
+  border: 1px solid #34C975;
+  border-radius: 6px;
+  margin: 0 10rpx;
+}

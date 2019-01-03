@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-cell": "/common/vant-weapp/cell/index",
+    "van-cell-group": "/common/vant-weapp/cell-group/index",
+    "van-field": "/common/vant-weapp/field/index",
+    "van-icon": "/common/vant-weapp/icon/index",
+    "order-goods": "/components/order-goods-row/index"
+  }
+}

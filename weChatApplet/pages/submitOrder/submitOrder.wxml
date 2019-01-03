@@ -1,0 +1,100 @@
+<!--pages/submitOrder/submitOrder.wxml-->
+<view class="page-submiting-order">
+  <view class="page-submiting-top">
+    <view class="address-wrapper">
+      <view class='address-wrapper-cell' wx:if="{{address&&address.addrId}}" bindtap='addAddress'>
+        <view class="address-info">
+          <view class="address-title">
+            <text class="inline-block">收货人：{{address.addrLinkman}} </text>
+            <text class="inline-block pull-right">{{address.addrPhone}}</text>
+          </view>
+          <view class="address-detail">
+            <text>收货地址：{{address.areaPath}}</text>
+          </view>
+          <image class="address-icon" src='/common/images/order/txdd-diz.png'></image>
+        </view>
+        <view class="goods-shop-arrow gray">
+          <van-icon name="arrow"></van-icon>
+        </view>
+      </view>
+      <!-- tag="div" wx:else :to="{name:'收货信息',query:{uuid:uuid,type:'order'}}" -->
+      <view wx:else class="comfirmAddr" bindtap='addAddress'>填写收货地址</view>
+    </view>
+    <!-- 支付方式 -->
+    <view class="pay-type-wrapper">
+      <view bindtap='choosePayType'>
+        <view class="pay-type">
+          <view class="pay-font">
+            支付配送
+          </view>
+          <view class="pull-right">
+            <view class="gray pay-font">在线支付</view>
+            <view class="gray pay-font">商家配送</view>
+          </view>
+        </view>
+        <view class="goods-shop-arrow gray">
+          <van-icon name="arrow"></van-icon>
+        </view>
+      </view>
+    </view>
+    <!-- 商户认证 -->
+    <view class="page-content merchant-CA">
+      <view class="components-merchant-row">
+        <view class="merchant-img">
+          <image src="{{shop.custAvatarUrl}}" alt=""/>
+        </view>
+        <view class="merchant-main">
+          <view class="merchant-title fontsize-30">
+            <span>{{shop.custName}}</span>
+            <view class="pull-right">
+              <span wx:if="{{shop.realNameAuth === 1}}" >
+                <image src="/common/images/mine/sy-icon-ren.png" alt="" />
+              </span>
+              <span wx:if="{{shop.aptitudeAuth === 1}}">
+                <image src="/common/images/mine/sy-icon-z.png" alt="" />
+              </span>
+              <span wx:if="{{shop.enterpriseAuth === 1}}">
+                <image src="/common/images/mine/sy-icon-qi.png" alt="" />
+              </span>
+            </view>
+          </view>
+          <view class="merchant-des clearfix">
+            <text class="price-unit">{{shop.areaPath}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order-detail-wrapper">
+      <view class="page-title">
+        <text>订单明细</text>
+      </view>
+      <view class="order--detail-row" wx:for="{{goodsData}}" wx:key="{{index}}">
+        <order-goods
+          title="{{item.commoName}}"
+          image="{{item.commoAttachPathUrl}}"
+          commoPrice="{{item.commoPrice}}"
+          num="{{item.commoNum}}"
+          commoUnit="{{item.commoUnit}}"
+        ></order-goods>
+      </view>
+    </view>
+    <view class="order-promo-wrapper">
+      <view class="page-content clearfix order-promo-content">
+        合计：￥{{payAmount}}
+      </view>
+    </view>
+    <view class='order-field-wrapper'>
+      <van-cell-group class="lineheight-1 marginT20">
+        <van-field value="{{remark}}" label="订单备注：" maxlength="100" placeholder="请输入订单备注（100字以内）" bind:change="onChangeRemark"/>
+      </van-cell-group>
+    </view>
+  </view>
+  <view class="page-submiting-bottom van-hairline--top">
+    <span>
+      实付款：
+      <span class="pay-amount">￥{{payAmount}}</span>
+    </span>
+    <view class="submiting-btn pull-right" bindtap="submitOrder">提交订单</view>
+  </view>
+  <van-toast id="van-toast" />
+</view>

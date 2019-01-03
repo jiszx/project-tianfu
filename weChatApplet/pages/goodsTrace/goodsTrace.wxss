@@ -1,0 +1,82 @@
+/* pages/goodsTrace/goodsTrace.wxss */
+.goods-trace {
+  background: #fff;
+  padding: 36rpx 40rpx;
+}
+.goods {
+  margin-bottom: 68rpx;
+}
+.goods image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 26rpx;
+  vertical-align: top;
+}
+.my-step-line {
+  border-left: 1px solid #C1F8D9;
+  position: relative;
+  /* height: 1000px; */
+}
+.my-step-info {
+  position: relative;
+  left: -17.4rpx;
+  top: -8px;
+}
+.my-step-item {
+  margin-bottom: 10px;
+}
+.my-step-title {
+  display: flex;
+  align-items: center;
+}
+.step-title-item {
+  margin-right: 20px;
+  font-size: 14px;
+}
+.my-step-circle {
+  width: 34rpx;
+  height: 34rpx;
+}
+.my-step-circle image {
+  width: 100%;
+  height: 100%;
+}
+.my-step-item {
+  margin: 10rpx 10rpx 20rpx 69rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-step-item p {
+  margin: 14rpx 0;
+  color: #999999;
+  font-size: 12px;
+  display: block;
+}
+.item-title{
+  font-size: 14px;
+}
+.soilsImage {
+  display: flex;
+  align-items: flex-start;
+}
+image {
+  max-width: 100px;
+  max-height: 100px;
+  /* margin-left: 5px; */
+}
+.item-info>p {
+  /* width: 94%; */
+  line-height: 40rpx;
+}
+.item-btn {
+  width: 70px;
+}
+.item-btn view {
+  margin-right: 5px;
+  display: inline;
+}
+.no-trace-info{
+  text-align: center;
+  font-size: 14px;
+}

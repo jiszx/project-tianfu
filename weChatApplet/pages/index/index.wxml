@@ -1,0 +1,130 @@
+<!--index.wxml-->
+<view class="container page-home">
+<!-- 搜索区域 -->
+  <div class="search-wrapper">
+    <!-- <van-search
+      class="search-input-inner"
+      value="{{ searchForm.keyword }}"
+      placeholder="请输入搜索关键词"                
+      bind:scan="onSearch"
+      bind:search="onSearch"
+    /> -->
+    <search-bar bind:search="search" bind:scan="search" placeholder="{{ searchForm.keyword }}"></search-bar>
+  </div>
+  <!-- 筛选区域 -->
+  <div class="filter-bar-wrapper-wrapper">
+    <div class="filter-bar-wrapper">
+      <ul>
+        <li bindtap="showAreaDrag">
+          <div class="div-block div-block-padding">
+            <text class="select-name">地区</text>
+            <span class="filter-bar-icon">
+              <van-icon name="arrow" class="icon-item icon-item-brand" class="{{showBrandDrag ? 'active':'' }}"/>
+            </span>
+          </div>
+         <div class="div-block">
+           <span>{{formData.addrCountyName||'全国'}}</span>
+         </div>
+        </li>
+        <li bindtap="showCategory">
+          <div class="div-block div-block-padding">
+            <span class="select-name">品类</span>
+            <span class="filter-bar-icon">
+              <van-icon name="arrow" class="icon-item icon-item-brand" class="{{showCategory ? 'active':'' }}"/>
+            </span>
+          </div>
+          <div class="div-block">
+            <span>{{formNess.commoTyName||'全部'}}</span>
+          </div>
+        </li>
+        <li bindtap="showFilterVarieties">
+          <div class="div-block div-block-padding">
+            <span class="select-name">品种</span>
+            <span class="filter-bar-icon">
+              <van-icon name="arrow" class="icon-item icon-item-brand" />
+            </span>
+          </div>
+          <div class="div-block">
+            <span class="name-span">{{showVarietiesName||'全部'}}</span>
+          </div>
+        </li>
+        <li bindtap="showFilterAuthentication">
+          <div class="div-block div-block-padding">
+            <span class="select-name">筛选</span>
+            <span class="filter-bar-icon">
+              <image src="/common/images/index/icon_saixuan.png" alt="" />
+            </span>
+          </div>
+          <div class="div-block">
+            <span>{{isChoseAuthent ? '已选' : '不限'}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 商品列表 -->
+  <view class="goods-wrapper">
+    <scroll-view style="height: {{scrollHeight}}px;" scroll-y="true" bindscrolltolower="searchScrollLower">  
+      <view 
+        class="goods-list {{index == goodsList.length-1 ? 'no-border' : ''}}"
+        wx:for="{{goodsList}}"
+        wx:key="{{index}}">
+        <goods-row
+          commoAttachPathUrl="{{item.commoAttachPathUrl}}"
+          commoId="{{item.commoId}}"
+          commoName="{{item.commoName}}"
+          commoPrice="{{item.commoPrice}}"
+          commoUnit="{{item.commoUnit}}"
+          commoSales="{{item.commoSales}}"
+          customer="{{item.customer}}"
+        >
+        </goods-row>
+      </view> 
+      <view class="loading" hidden="{{!searchLoading}}">努力加载中...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已无更多数据</view>  
+    </scroll-view>
+  </view>
+  
+  <!--行政区域组件-->
+  <area-popup id="area-popup" position="top" showBrandDrag="{{showBrandDrag}}" bind:confirm='areaConfirm'></area-popup>
+  <!--品类筛选弹层-->
+  <category-popup id="category-popup" showCategory="{{showCategory}}" bind:close="closeCategory" bind:init-data="getInitData" bind:myevent="categoryConfirm" commoTyPathSelect="{{searchForm.commoTyPath}}"></category-popup>
+  <!-- 品种筛选弹层 -->
+  <div class="{{showVarietiesDrag ? 'showVarietiesDrag brand-drag-wrapper' : ''}}">
+    <div class="brand-drag-inner page-content">
+      <view
+        class="brand-item ellipsis"
+        wx:for="{{varietiesList}}"
+        wx:key="{{index}}"
+        bindtap="chooseVarieties(item)"
+      >
+        <div class="varieties fontsize-26">{{item.commoTyName}}</div>
+      </view>
+    </div>
+  </div>
+  <!-- 认证筛选弹层 -->
+  <div class="{{showAuthenticationDrag ? 'showAuthenticationDrag brand-drag-wrapper' : 'brand-drag-wrapper'}}">
+    <div class="brand-drag-inner page-content">
+      <view
+        class="brand-item ellipsis"
+        wx:for="{{authenticationList}}"
+        wx:key="{{index}}"
+        data-item="{{item}}"
+        data-key="{{index}}"
+        bindtap="chooseAuthentication"
+      >
+        <div class="authentication">
+          <span class="authentication-child first-span">{{item.authenticationName}}</span>
+          <span class="authentication-child second-span">
+            <van-switch checked="{{item.authenticationStauts}}"/>
+          </span>
+        </div>
+      </view>
+    </div>
+    <div class="brand-drag-inner-btn van-hairline--top" bindtap="confirmAuthentication">
+      <div class="brand-drag-inner-btn-item">确定</div>
+    </div>
+  </div>
+  <div :class="{showAuthenticationDrag ? 'show brand-mask' : ''}" bindtap="showAuthenticationDrag=false"></div>
+  <van-toast id="van-toast" />
+</view>

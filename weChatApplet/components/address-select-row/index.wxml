@@ -1,0 +1,16 @@
+<!--components/address-select-row/index.wxml-->
+<view class="component-address-row">
+  <view class="address-row" bindtap="addressClick">
+    <p class="address-name">
+      <text class="inline-block">{{name}}</text>
+      <text class="inline-block">{{phone}}</text>
+      <text class="inline-block address-default-taps" wx:if="{{isDefault}}">默认</text>
+    </p>
+    <p class="address-detail">{{address}}</p>
+  </view>
+  <view class="address-icon">
+    <view class="address-icon-inner text-right" bindtap="editClick">
+      <van-icon name="edit" class="fontsize-84" />
+    </view>
+  </view>
+</view>

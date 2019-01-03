@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "comments-row": "/components/comments-row/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "shop-row": "/components/shop-row/index",
+    "goods-sku": "/components/goods-sku/index",
+    "comments-row": "/components/comments-row/index",
+    "van-goods-action": "/common/vant-weapp/goods-action/index",
+    "van-goods-action-icon": "/common/vant-weapp/goods-action-icon/index",
+    "van-goods-action-button": "/common/vant-weapp/goods-action-button/index",
+    "van-icon": "/common/vant-weapp/icon/index"
+  }
+}

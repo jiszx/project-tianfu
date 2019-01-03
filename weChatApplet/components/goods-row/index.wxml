@@ -1,0 +1,32 @@
+<!-- 商品列表组件 -->
+<view class="container page-components">
+  <view class="components-goodlist-row" bindtap="linkToDetail">
+    <div class="goodlist-left">
+      <image src="{{commoAttachPathUrl}}" alt=""/>
+    </div>
+    <view class="goodlist-right">
+      <view class="goodlist-title">
+        <p>{{commoName}}</p>
+      </view>
+      <view class="goodlist-des clearfix">
+        <view class="des-unit">
+          <view class="shop-custName">{{customer.custName}}</view>
+          <span class="authentication-img">
+            <image wx:if="{{customer.realNameAuth == 1}}" src="/common/images/mine/wd-rz-r@2x.png" alt=""/>
+            <image wx:if="{{customer.aptitudeAuth == 1}}" src="/common/images/mine/wd-rz-z@2x.png" alt=""/>
+            <image wx-if="{{customer.enterpriseAuth == 1}}" src="/common/images/mine/wd-rz-q@2x.png" alt=""/>
+            <image wx:if="{{customer.vipAuth == 1}}" src="/common/images/mine/wd-rz-v@2x.png" alt=""/>
+          </span>
+        </view>
+        <p class="des-common">
+          <span class="commoPrice">
+            <text class='price'>{{commoPrice}}</text>{{'元/' + commoUnit}}
+          </span>
+          <span class="commoSales">{{commoSales}}人购买</span>
+          <!-- <span class="inline-block cart-img" :class="{active:isActive}" @click.stop="addCar"></span> -->
+        </p>
+      </view>
+    </view>
+  </view>
+</view>
+<slot></slot>

@@ -1,0 +1,17 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class="success_pay">
+  <view class="public-bj">
+    <image src="/common/images/order/fbcg-bj@2x.png" alt=""/>
+  </view>
+  <view class="public-row page-content text-center protect">
+    <view class="pulic-status">
+      <image src="/common/images/order/zfcg-img.png" alt=""/>
+      <p>您已付款成功！</p>
+    </view>
+    <p class="gray">支付时间：{{time}}</p>
+  </view>
+  <!-- <button class="success-btn checkDetail fontsize-30 text-center">查看订单</button> -->
+  <!--  tag="view" v-if="!type && orderId" :to="{name: '订单详情', query: { orderData: orderId }}" -->
+  <button class="success-btn returnHome text-center" bindtap='returnIndex'>返回首页</button>
+  <!-- tag="view" :to="{name:'首页'}" -->
+</view>

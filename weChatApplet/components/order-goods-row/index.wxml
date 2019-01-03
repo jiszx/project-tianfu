@@ -1,0 +1,20 @@
+<!--components/order-goods-row/index.wxml-->
+<view class="components-goods-row van-hairline--bottom">
+  <view class="goods-img">
+    <image src="{{image}}" alt=""/>
+  </view>
+  <view class="goods-main">
+    <view class="goods-title">
+      <text class='goods-title-text'>{{title}}</text>
+      <view class="pull-right">
+        <text class="goods-price">¥ {{commoPrice}}</text>
+      </view>
+    </view>
+    <view class="goods-des clearfix">
+      <text class="price-unit">{{commoPrice}}元/{{commoUnit}}</text>
+      <view class="pull-right">
+        <text class="price-unit">{{num + commoUnit}}</text>
+      </view>
+    </view>
+  </view>
+</view>

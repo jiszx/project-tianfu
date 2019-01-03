@@ -1,0 +1,26 @@
+<!--components/shop-row/index.wxml-->
+<view class="goods-shop">
+  <view class="business_box">
+    <view class="info_box">
+      <view class="left_img">
+        <image wx:if="company && company.custAvatarUrl" src="{{company.custAvatarUrl}}" alt=""/>
+        <image wx:else src="/common/images/mine/wd-tx@2x.png" alt=""/>
+      </view>
+      <view class="right_box">
+        <h5>
+          {{company.custName}}
+          <span class="icon_box">
+            <image wx:if="company.realNameAuth" src="/common/images/mine/sy-icon-ren.png" alt=""/>
+            <image wx:if="company.aptitudeAuth"  src="/common/images/mine/sy-icon-z.png" alt=""/>
+            <image wx:if="company.enterpriseAuth"  src="/common/images/mine/sy-icon-qi.png" alt=""/>
+          </span>
+        </h5>
+        <p style="color:RGBA(147, 147, 147, 1)">{{company.areaPath||''}}</p>
+        <p class="bottom_p">{{company.followerNum}}人关注了他 <span wx:if="{{!type}}" bindtap="focusCompany">{{company.isFollowCustomer?'已关注':'加关注'}}</span></p> 
+      </view>
+    </view>
+    <view class="goods-shop-arrow gray">
+      <van-icon name="arrow"></van-icon>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/payType/payType.wxml-->
+<view class="page-pay-type">
+  <view class="pay-type">
+    <view class="pay-type-active page-content">
+      <text>支付方式</text>
+      <view class="pull-right">
+        <text class="active">在线支付</text>
+      </view>
+    </view>
+    <view class="page-content delivery">
+      <text class="paddingB40">配送方式</text>
+      <view>
+        <span class="item-btn inline-block active" bind:click="transType=1">商家配送</span>
+      </view>
+    </view>
+    <view class='time-pick-wrapper'>
+      <!-- <van-cell v-if="transType===1" title="运费：" :border="false" :value="'￥'+(freight||0)" /> -->
+      <van-cell title="送货时间：" border="false" is-link value="{{transDate||'请选择送货时间'}}" bind:click="showDatePop" />
+    </view>
+  </view>
+  
+  <van-popup show="{{showDate}}" position="bottom" bind:close="dateCancel">
+    <view>
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        min-date="{{ minDate }}"
+        bind:cancel="dateCancel"
+        bind:confirm="dateConfirm"
+      />
+    </view>
+  </van-popup>
+  <view class="bottom-btn-wrapper" bindtap="confirmFn">确认</view>
+</view>

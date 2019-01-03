@@ -1,0 +1,116 @@
+@import '../../common/common.wxss';
+@import "../../wxParse/wxParse.wxss";
+
+/* pages/goods/goods.wxss */
+/* 轮播 \ 商品主图 */
+.product-swipe-wrapper{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+.product-swipe-wrapper-inner{
+  position: relative;
+}
+.swiper-box{
+  position: relative;
+}
+.swiper-box-item{
+  width: 100%;
+  height: 220px;
+}
+.swiper-index{
+  background: #ccc;
+  border-radius: 20rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+  padding: 6rpx 30rpx;
+  color:white;
+  font-size: 12px;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+/* 商品信息 */
+.goods-info-wrapper .goods-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 10rpx;
+  font-size: 36rpx;
+}
+.goods-info-wrapper .goods-des{
+  padding:20rpx 0;
+  line-height: 44rpx;
+}
+.goods-info-wrapper .warning {
+    font-size: 40rpx;
+}
+.goods-info-wrapper .goods-save-time {
+    font-size: 12px;
+}
+.goods-info-wrapper .promotion-name{
+  line-height: 1;
+  padding: 8rpx 16rpx 8rpx;
+}
+.goods-info-wrapper .promotion-name::after{
+  border-radius: 10rpx;
+}
+.goods-item {
+  background: #fff;
+  padding: 30rpx 30rpx 0;
+  position: relative;
+}
+.goods-trace {
+  position: absolute;
+  right: 30rpx;
+  bottom: 90rpx;
+  height: auto;
+  overflow: hidden;
+}
+.goods-trace image{
+  width: 178rpx;
+  height: 60rpx;
+}
+/* 商家信息 */
+.shop-info {
+  margin-top: 20rpx;
+}
+.goods-des-image-list{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.buy-now-btn-wrapper {
+  height: 49px;
+}
+.goods-buy-now{
+  width: 100%;
+  height: 100%;
+}
+/* 评价 */
+.goods-comments {
+  margin-top: 20rpx;
+  padding: 26rpx 30rpx 0;
+  background: #fff;
+}
+.goods-comments-title {
+  padding-bottom: 30rpx;
+}
+.goods-comments-title span {
+  margin-right: 10rpx;
+  font-size: 14px;
+}
+.goods-comments-title:not(:last-child) {
+  border-bottom: 1px solid #D4D4D4;
+  padding-bottom: 28rpx;
+}
+.goods-comments-title .title {
+  font-size: 15px;
+}
+.goods-comments-title .right_box {
+  line-height: 28px;
+  font-size: 12px;
+  float: right;
+}

@@ -1,0 +1,64 @@
+/* pages/payOrder/payOrder.wxss */
+.page-choose-pay{
+  position: relative;
+  border-top: 1px solid #efefef;
+}
+.page-content {
+  background: #fff;
+  padding: 0 30rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.page-content span{
+  font-size: 30rpx;
+}
+.page-content .price-icon{
+  font-size: 24rpx;
+}
+.pay-cell {
+  align-items: center;
+}
+.warning {
+  color: #ffa800;
+}
+.choose-payType {
+  padding: 30rpx 0;
+}
+.payType-item{
+  background: #fff;
+  /* padding: 10rpx 0; */
+}
+.wechat-img{
+  width: 92rpx;
+  height: 92rpx;
+  vertical-align: middle;
+}
+.bottom_box{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  height: 100rpx;
+}
+.left_box{
+  flex:1;
+  background-color: #fff;
+  border-top:1px solid RGBA(212, 212, 212, 1);
+  line-height: 100rpx;
+  text-align: center;
+  font-size:15px;
+}
+  
+.left_box span{
+  color:RGBA(255, 168, 0, 1);
+}
+.right_box{
+  flex:0 0 230rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:15px;
+  background-color: RGBA(52, 201, 117, 1);
+  color:#fff;
+  position: relative;
+}

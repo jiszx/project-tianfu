@@ -1,0 +1,170 @@
+/**index.wxss**/
+.page-home {
+  padding-top: 208rpx;
+}
+/** 搜索框 **/
+.search-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  z-index: 30;
+  padding-right: 10rpx;
+}
+.search-input-inner {
+  width: 100%;
+}
+.filter-bar-wrapper-wrapper{
+  position: fixed;
+  left: 0;
+  top: 88rpx;
+  padding-bottom: 1px;
+  width: 100%;
+  height: 120rpx;
+  z-index: 20;
+  background: #f1f5f8;
+}
+.filter-bar-wrapper{
+  height: 120rpx;
+}
+.filter-bar-wrapper ul{
+  line-height: 120rpx;
+}
+.filter-bar-wrapper li{
+  display:inline-block;
+  width: 25%;
+}
+.filter-bar-wrapper .div-block{
+  font-size: 28rpx;
+  max-height: 22px;
+  line-height: 22px;
+  text-align: center;
+  display: block;
+}
+.filter-bar-wrapper .div-block-padding{
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  color: #939393;
+}
+.filter-bar-wrapper .div-block .select-name{
+  padding-right: 10rpx;
+}
+.filter-bar-wrapper .div-block .filter-bar-icon{
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  margin-top: -6rpx;
+}
+.filter-bar-wrapper .div-block .icon-item{
+  font-size: 20rpx;
+  font-weight: bold;
+}
+.filter-bar-wrapper .div-block .icon-item-brand{
+  transform: rotate(90deg);
+  transition: all .28s;
+}
+.filter-bar-wrapper .div-block .icon-item-brand.active{
+  transform: rotate(-90deg);
+  color: #34C975;
+}
+.filter-bar-icon image {
+  width: 28rpx;
+  height: 24rpx;
+}
+
+
+/**分类二**/
+.goods-wrapper{
+  display: block;
+}
+.goods-list {
+  width: 100%;
+  border-bottom: 2rpx solid #D4D4D4;
+}
+.no-border {
+  border-bottom: none;
+}
+
+/* 加载 */
+.loading{  
+  padding: 16rpx 0;  
+  text-align: center;
+  font-size: 28rpx;  
+  color: #999999;
+}
+
+/**分类三 品种认证**/
+.brand-drag-wrapper{
+  position: absolute;
+  left: 0;
+  top: 206rpx;
+  background: white;
+  z-index: 20;
+  width: 100%;
+  display: none;
+}
+
+.brand-drag-wrapper.showVarietiesDrag,.brand-drag-wrapper.showAuthenticationDrag{
+  display: block;
+}
+.brand-drag-wrapper ul{
+  position: relative;
+  z-index: 20;
+}
+.brand-drag-wrapper .brand-drag-inner{
+  display: flex;
+  flex-flow: wrap;
+  min-height: 200rpx;
+  max-height: 800rpx;
+  overflow-y: scroll;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item{
+  flex: 0 0 100%;
+  text-align: center;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item .varieties{
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom: 2rpx solid #D4D4D4;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item .authentication{
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom: 2rpx solid #D4D4D4;
+  display: flex;
+  font-size: 26rpx;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item .authentication .authentication-child{
+  flex: 0 0 50%;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item .authentication .first-span{
+  text-align: left;
+  padding-left: 20rpx;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item .authentication .second-span{
+  text-align: right;
+  padding: 16rpx 20rpx 0 0;
+}
+.brand-drag-wrapper .brand-drag-inner .brand-item.active span{
+  background: red;
+  color:#fff;
+}
+.brand-drag-wrapper .brand-drag-inner-btn{
+  color: #fff;
+  background: #34C975;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  margin-top: 2rpx;
+  font-size: 26rpx;
+  display:block;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

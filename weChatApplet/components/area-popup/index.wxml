@@ -1,0 +1,6 @@
+<!--area-popup.wxml-->
+<view>
+  <van-popup show="{{ show }}" position="{{ position }}" overlay="{{ false }}">
+    <van-area area-list="{{areaList}}" bind:confirm="confirm" bind:change="change" bind:cancel="cancelFn" />
+  </van-popup>
+</view>

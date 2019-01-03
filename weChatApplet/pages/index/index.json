@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "search-bar": "/components/search-bar/index",
+    "van-search": "/common/vant-weapp/search/index",
+    "van-icon": "/common/vant-weapp/icon/index",
+    "van-switch": "/common/vant-weapp/switch/index",
+    "goods-row": "/components/goods-row/index",
+    "area-popup": "/components/area-popup/index",
+    "category-popup": "/components/category-popup/index"
+  }
+}

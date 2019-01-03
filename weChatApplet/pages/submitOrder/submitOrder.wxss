@@ -1,0 +1,186 @@
+/* pages/submitOrder/submitOrder.wxss */
+.page-submiting-order{
+  padding-bottom: 120rpx;
+  position: relative;
+}
+.page-submiting-top .order-promo-wrapper .pull-right{
+  color: #939393; 
+}
+.page-submiting-top {
+  padding-top: 1px;
+}
+.order-promo-content{
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 14px;
+  text-align: right;
+  color: #939393; 
+}
+/* 商户认证 */
+.page-content {
+  background-color: #fff;
+}
+.merchant-CA {
+  margin: 20rpx 0 30rpx;
+}
+.merchant-CA .components-merchant-row{
+  display: flex;
+  height: 150rpx;
+  padding: 25rpx 0;
+}
+.merchant-img{
+  width: 96rpx;
+  height: 96rpx;
+  flex: 0 0 96rpx;
+  border: 2rpx solid #B2DA88;
+  border-radius: 48px;
+}
+.merchant-img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.merchant-main{
+  width: 100%;
+  height: 100rpx;
+  padding-left: 20rpx;
+}
+.merchant-title{
+  height: 50rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.merchant-title image{
+  max-height: 36rpx;
+  max-width: 28rpx;
+  margin-left: 2px;
+}
+.merchant-des .price-unit{
+  color: #999999;
+  font-size: 12px;
+}
+.merchant-des .pull-right{
+  margin-top: -5px;
+  color: #999999;
+}
+.page-submiting-bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 30rpx;
+  font-size: 15px;
+  background: #fff;
+}
+.pay-amount{
+  color:#FFA800;
+}
+.submiting-btn{
+  height: 100rpx;
+  background: #34C975;
+  color: white;
+  width: 240rpx;
+  text-align: center;
+}
+/* 地址 */
+.address-wrapper{
+  line-height: 60rpx;
+  background: #ffffff;
+  padding: 1px 0;
+  margin-top: 20rpx;
+}
+.address-wrapper-cell{
+  position: relative;
+  width:100%;
+  display:-webkit-flex;
+  display:flex;
+  padding:10px 15px;
+  box-sizing:border-box;
+  line-height:24px;
+  color:#333;
+  font-size:14px;
+}
+.goods-shop-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30rpx;
+  height: 23px;
+  margin: auto;
+  overflow: hidden;
+}
+.comfirmAddr {
+  margin: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #34C975;
+  border:1px solid rgba(52, 201, 117, 1);
+  border-radius:5px;
+  font-size: 30rpx;
+}
+.address-info{
+  position: relative;
+  line-height: 60rpx;
+  padding-left: 60rpx;
+  margin-right: 30rpx;
+  width: 100%;
+}
+.address-title{
+  width: 93%;
+}
+.address-detail{
+  color: #939393;
+  line-height: 1.3;
+  min-height: 20rpx;
+}
+.address-default-taps{
+  height: 20px;
+  line-height: 22px;
+  padding: 0 10px;
+  border:1px solid #34C975;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+}
+.address-icon{
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  left: 10rpx;
+  top: 66rpx;
+  bottom: 30rpx;
+  color: #939393;
+}
+/* 支付方式 */
+.pay-type-wrapper {
+  position: relative;
+  padding:10px 50px 10px 15px;
+  font-size:14px;
+  border-top: 1px solid #e5e5e5;
+}
+.pay-type-wrapper, .order-detail-wrapper {
+  background: #fff;
+}
+.pay-type-wrapper .pay-type{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-title {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 30rpx;
+  width: 100%;
+}
+.order--detail-row {
+  padding-left: 30rpx;
+}
+.order-field-wrapper{
+  margin-top: 20rpx;
+  background: #fff;
+}
+.pay-font {
+  font-size: 14px;
+}

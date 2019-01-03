@@ -1,0 +1,31 @@
+<!--components/comments-row/index.wxml-->
+<view class="goods-comments-info">
+  <view class="goods-comments-cust">
+    <view class="comment-box">
+      <view class="cust-img">
+        <image src="{{ customer.custAvatarUrl }}" alt=""/>
+      </view>
+      <span>{{customer.custName}}</span>
+    </view>
+    <view class="comment-box">
+      <view>
+        <image wx:if="{{ commentType == 0 }}" src="/common/images/order/fbpj-hp-1.png" alt=""/>
+        <image wx:if="{{ commentType == 1 }}" src="/common/images/order/fbpj-zp-2.png" alt=""/>
+        <image wx:if="{{ commentType == 2 }}" src="/common/images/order/fbpj-cp-2.png" alt=""/>
+      </view>
+      <span class="comments-level">{{commentType == 2 ? '差评' : commentType == 0? '好评' : '中评'}}</span>
+    </view>
+  </view>
+  <view class="goods-comments-coment">
+    <p wx:if="{{ commentDetails }}">{{commentDetails}}</p>
+    <view>
+      <image wx:if="{{ attachPath1Url }}" src="{{ attachPath1Url }}" alt=""/>
+      <image wx:if="{{ attachPath2Url }}" src="{{ attachPath2Url }}" alt=""/>
+      <image wx:if="{{ attachPath3Url }}" src="{{ attachPath3Url }}" alt=""/>
+    </view>
+    <view class="comment-time">
+      <span wx:if="{{ createdDate }}" class="gray fontsize-24">{{ createdDate }}</span>
+      <span class="gray fontsize-24">购买数量： X{{commoNum||0}}</span>
+    </view>
+  </view>
+</view>

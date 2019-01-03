@@ -1,0 +1,43 @@
+/* components/address-select-row/index.wxss */
+.component-address-row{
+  display: flex;
+  padding: 30rpx;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(150, 148, 148, 0.11);
+  margin-top: 20rpx;
+}
+.address-row{
+  flex: auto;
+  padding-right: 20rpx;
+}
+.address-name {
+  display: block;
+  margin-bottom: 20rpx;
+}
+.address-name text {
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.address-icon{
+  flex: 0 0 74rpx;
+  padding: 20rpx 0;
+}
+.address-icon-inner{
+  font-size: 44rpx;
+  border-left: 1px solid #efefef;
+  text-align: right;
+}
+.address-default-taps{
+  height: 20px;
+  line-height: 19px;
+  padding: 0 10px;
+  color: #FFC046;
+  border:1px solid #34C975;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+.address-detail {
+  display: block;
+  font-size: 24rpx;
+  color: #797979;
+}

@@ -1,0 +1,148 @@
+.componnet-filtrate-popup{
+    position: fixed;
+    top: 270rpx;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 40;
+    background: #fff;
+  }
+  .page-supply-list .filtrate-popup-inner{
+    padding-top: 208rpx; /* 含搜索高度 */
+  }
+  .filtrate-popup-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .filtrate-min{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding:0 0 88rpx;
+    background-color: #fff;
+    overflow-x: auto;
+    position: relative;
+    z-index: 2;
+    transition: all 0.28s;
+  }
+  .confirm-btn-wrapper{
+    flex: 0 0 76rpx;
+    box-sizing: border-box;
+    height: 76rpx;
+    width: 100%;
+    line-height: 76rpx;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .filtrate-min-inner{
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .mask-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0);
+  }
+   /*供应大厅运动*/
+  .componnet-filtrate-popup.filtrate-show{
+    transform: translatey(-62rpx);
+    opacity: 1;
+  }
+  .componnet-filtrate-popup.filtrate-hide{
+    transform: translatey(100%);
+    opacity: 0;
+  }
+
+  .componnet-filtrate-popup.filtrate-show .filtrate-min{
+    transform: translate3d(0%, 0, 0);
+    opacity: 1;
+    transition: .3s ease-out;
+  }
+  .componnet-filtrate-popup.filtrate-hide .filtrate-min{
+    transform: translate3d(0%, -100%, 0);
+    opacity: 0.5;
+    transition: .3s ease-out;
+  }
+
+  /*内容区域*/
+
+  .confirm-btn-wrapper-inner{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+  .confirm-btn{
+    float: left;
+    width: 50%;
+  }
+  .category-item{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category-item li{
+    flex: 0 0 50%;
+    padding: 20rpx 0 0;
+    text-align: center;
+  }
+  .brand-drag-inner{
+    display: flex;
+    flex-flow: wrap;
+    padding-bottom: 20rpx;
+  }
+  .brand-drag-inner .brand-item{
+    flex: 0 0 50%;
+    padding: 20rpx 0 0;
+    text-align: center;
+  }
+  
+  /** 商品分类弹层列表 **/
+  
+  .category-wrapper{
+    display: flex;
+    height: 100%;
+  }
+  .category-wrapper .category-name{
+    flex: 0 0 180rpx;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .category-wrapper .category-name ul li{
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 26rpx;
+  }
+  .category-wrapper .category-name ul .active{
+    color: #34C975;
+    border-left: 8rpx solid #34C975;
+  }
+  .category-wrapper .category-main{
+    flex: 0 0 240rpx;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 30rpx;
+  }
+  .category-wrapper .category-main .category-item-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 12rpx;
+  }
+  .category-wrapper .category-main .category-item-wrapper .active{
+    color: #34C975;
+  }
+  .category-wrapper .category-main .category-item-wrapper .category-item{
+    flex: 0 0 100%;
+    margin-bottom: 30rpx;
+    padding-left: 10rpx;
+    font-size: 26rpx;
+  }
+  .text-center{
+    text-align: center;
+  }

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "/common/vant-weapp/cell/index",
+    "van-radio-group": "/common/vant-weapp/radio-group/index",
+    "van-radio": "/common/vant-weapp/radio/index"
+  }
+}

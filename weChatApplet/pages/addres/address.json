@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "address-row-select": "/components/address-select-row/index"
+  }
+}

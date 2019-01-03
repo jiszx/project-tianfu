@@ -1,0 +1,48 @@
+<!--components/goods-sku/index.wxml-->
+<view class="goods-sku-container">
+<van-popup show="{{show}}" position="bottom" bind:close="closeSku">
+  <view class="goods-sku">
+    <view class="goods-sku-close text-right">
+      <image src="/common/images/index/ljgm-tc-gb.png" bindtap="closeSku" alt=""/>
+    </view>
+    <view class="goods-sku-goods-info-wrapper page-content">
+      <view class="goods-sku-goods-image">
+        <image src="{{goodsData.commoAttachPathUrl}}" alt=""/>
+      </view>
+      <view class="goods-sku-goods-info">
+        <view class="goods-title">
+          <p>{{goodsData.commoName}}</p>
+        </view>
+        <view class="goods-des clearfix">
+          <p class="inline-block font-yellow">
+            <span class="goods-price inline-block">{{goodsData.commoPrice}}</span><span class="fontsize-26"> 元 / {{goodsData.commoUnit}}</span>
+          </p>
+          <view class="pull-right gray fontsize-24">
+            <!--<span>库存：{{goodsData.stockNum}}</span>-->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="goods-sku-step" >
+      <p class="gray goods-sku-step-num" >数量：</p>
+      <van-stepper
+        value="{{selectedNum}}"
+        integer
+        min="1"
+        bind:change="onChangeNum"
+      />
+    </view>   
+    <view class="sku-bottom-wrapper">
+      <view class="select-price page-content">
+        <view class="van-hairline-top text-right gray">
+          数量 <span class="selected-num">{{selectedNum}}</span> 合计：<span class="font-yellow">{{totalPrice}}元</span>
+        </view>
+      </view>
+      <view class="goods-sku-btn-wrapper text-center fontsize-32">
+        <view class="goods-sku-btn bg-yellow" v-if="showBuyBtn" bindtap="buyNow">确定</view>
+        <!-- <view class="goods-sku-btn bg-yellow" v-if="showAddCart" bind:click="addCart">确定</view> -->
+      </view>
+    </view>
+  </view>
+</van-popup>
+</view>

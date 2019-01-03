@@ -1,0 +1,68 @@
+.components-search-bar .components-search-bar-inner{
+  position: relative;
+  display: flex;
+  height: 44px;
+  z-index: 30;
+}
+.components-search-bar .components-search-bar-inner .historyShow{
+  background: #fff;
+}
+.components-search-bar .components-search-bar-inner .search-input{
+  width: 100%;
+}
+.components-search-bar .components-search-bar-inner .search-input .search-input-inner{
+  border-radius: 64rpx;
+}
+.components-search-bar .components-search-bar-inner .search-input .search-input-inner::after{
+  border-radius: 64rpx;
+  background: rgba(255, 255, 255, .15) !important;
+}
+.components-search-bar .search-history{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 88rpx;
+  width: 100%;
+  line-height: 80rpx;
+  background: #fff;
+  z-index: 30;
+  transition: all 0.28s;
+}
+.components-search-bar .historyShow{
+  display: block;
+}
+.components-search-bar .search-history ul{
+  font-size: 28rpx;
+}
+.components-search-bar .search-history ul li{
+  display: block;
+}
+.components-search-bar .search-history ul li span,.components-search-bar .search-history ul li div{
+  padding-left: 30rpx;
+  width:100%;
+}
+.components-search-bar .search-history ul li span image{
+  max-width: 36rpx;
+  max-height: 36rpx;
+  vertical-align: sub;
+}
+.components-search-bar .search-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, .4);
+  z-index: 29;
+  display: none;
+  transition: all 0.28s;
+}
+.components-search-bar .search-mask .historyShow{
+  display: block;
+}
+.red{
+  color:red;
+}
+.text-center{
+  text-align:center;
+}

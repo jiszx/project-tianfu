@@ -1,0 +1,102 @@
+<!--pages/goods/goods.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+       
+<view class='goods-page'>
+  <view class="product-swipe-wrapper">
+    <view class="product-swipe-wrapper-inner">
+      <!--轮播-->
+      <view class="swiper-box">
+        <swiper class='swiper-box-item' bindchange='swiperChange' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{swiperData}}" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image"/>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="swiper-index" v-if="swiperData.length>1">
+          {{currentSwiperIndex}}/{{swiperData.length}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--商品信息-->
+  <view class="goods-info-wrapper goods-item">
+    <view class="goods-info">
+      <view class="goods-title fontsize-36">
+        {{goodsData.commoName}}
+      </view>
+      <text class="gray goods-save-time" v-if="salesShow">{{goodsData.commoSales}}人购买</text>
+      <view class="goods-des">
+        <text class="inline-block warning orange-price marginT20">{{goodsData.commoPrice}} <text class="fontsize-28">元/{{goodsData.commoUnit}}</text></text>
+        <text class="block goods-save-time gray">采收日期：{{goodsData.harvestDate}}</text>
+        <view class="goods-trace" wx:if="{{goodsData.canTrace}}" bindtap="goTrace">
+          <image wx:if="{{goodsData.greenTrace}}" src="/common/images/index/spxq-zsxx.png" alt=""/>
+          <image wx:else src="/common/images/index/spxq-zsxx-2.png" alt=""/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商家信息 -->
+  <view class="shop-info">
+    <shop-row company="{{company}}" bind:changeFocus="changeFocus"/>
+  </view>
+  <!-- 评价 -->
+  <view class="goods-comments">
+    <view class="goods-comments-title" bindtap="goComments">
+      <span class="title">评价</span>
+      <span class="gray">好评({{commentNum.goodCommentNum}})</span>
+      <span class="gray">中评({{commentNum.mediumCommentNum}})</span>
+      <span class="gray">差评({{commentNum.badCommentNum}})</span>
+      <view class="right_box gray">
+        查看全部评论
+        <van-icon name="arrow" ></van-icon>
+      </view>
+    </view>
+    <view wx:for="{{ comments }}" wx:key="{{index}}">
+      <comments-row 
+        customer="{{ item.customer }}"
+        commentType="{{ item.commentType }}"
+        commentDetails="{{ item.commentDetails }}"
+        attachPath1Url="{{ item.attachPath1Url||'' }}"
+        attachPath2Url="{{ item.attachPath2Url||'' }}"
+        attachPath3Url="{{ item.attachPath3Url||'' }}"
+        commoNum="{{ item.commoNum }}" />
+    </view>
+  </view>
+  <!--商品图片详情图-->
+  <view class="goods-des-image-list text-center">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!-- <img v-for="(item,index) in goodsData.commoAttachPaths" :src="item" alt="" :key="index" > -->
+  </view>
+  
+  <!--立即购买与加入购物车弹窗-->
+  <view class="buy-now-btn-wrapper">
+    <!-- <button class="goods-buy-now" bindtap="onClickBuyBtn" primary>立即购买</button> -->
+    <van-goods-action>
+      <!-- <van-goods-action-icon
+        icon="cart"
+        text="购物车"
+        bind:click="onClickGoodsCartBtn"
+      />
+      <van-goods-action-button
+        text="加入购物车"
+        type="warning"
+        bind:click="onClickAddCartBtn"
+      /> -->
+      <van-goods-action-button
+        text="立即购买"
+        type="warning"
+        bind:click="onClickBuyBtn"
+      />
+    </van-goods-action>
+  </view>
+  <goods-sku
+    id="goods_sku"
+    gooodsSkuShow="{{gooodsSkuShow}}"
+    goodsData="{{goodsData}}"
+    showBuyBtn="{{showBuyBtn}}"
+    showAddCart="{{showAddCart}}"
+    bind:buy-clicked="buyNow"
+  />
+  <van-toast id="van-toast" />
+</view>

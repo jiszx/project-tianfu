@@ -1,0 +1,24 @@
+<view class='login-page'>
+  <view class="login-header">田夫网</view>
+  <view class="login_box">
+    <view class="slide_p">
+      <span class="active">登录</span> 
+    </view>
+    <!-- 登录 -->
+    <view class="login_tab">
+      <view class="login-input">
+        <van-field value="{{phoneNumber}}" loginClass="van-cell__login" bind:blur="checkPhone" placeholder="请输入手机号码" />
+        <text class='input-err' wx:if="{{phoneNumberError}}">{{phoneNumberError}}</text>
+      </view>
+      <view class="login-input">
+        <van-field value="{{password}}" loginClass="van-cell__login" type="password" bind:blur="checkPass" placeholder="请输入登录密码" />
+        <text class='input-err' wx:if="{{passwordError}}">{{passwordError}}</text>
+      </view>
+      <view class="fontsize-26 forget-psd">
+        <text class="pull-right" bind:click="forget_psd">忘记密码？</text>
+      </view>
+      <button size="large" class="{{phoneNumber?'login-btn login-btn-prim':'login-btn'}}" bindtap="doLogin">登录</button>
+    </view>
+    <van-toast id="van-toast" />
+  </view>
+</view>

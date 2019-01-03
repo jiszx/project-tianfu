@@ -1,0 +1,31 @@
+<!--pages/addres/address.wxml-->
+<view class="page-address-list">
+  <view class="address-list-box">
+    <view class="address-item paddingT20" wx:for="{{ address }}" wx:key="{{ index }}">
+      <!-- <addressRow
+        v-if="type==='normal'"
+        :isDefault="item.addrDefault"
+        :name="item.addrLinkman"
+        :phone="item.addrPhone"
+        :address="item.areaPath.replace(/\>/g,'')+item.addrAddress"
+        @default-click="defaultClick(item.addrId)"
+        @edit-click="editClick(item)"
+        @delete-click="deleteFn(item.addrId)"
+      /> -->
+      <address-row-select
+        wx:if="type==='order'"
+        isDefault="{{ item.addrDefault }}"
+        name="{{ item.addrLinkman }}"
+        phone="{{ item.addrPhone }}"
+        address="{{ item.areaPath + item.addrAddress }}"
+        data-item="{{ item }}"
+        bind:edit-click="editClick"
+        bind:address-click="addressClick"
+      />
+    </view>
+  </view>
+  <view class="btn-wrapper text-center" bindtap="editClick">
+    新增收货地址
+  </view>
+  <van-toast id="van-toast" />
+</view>
